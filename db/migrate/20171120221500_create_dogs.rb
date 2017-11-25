@@ -1,7 +1,6 @@
 class CreateDogs < ActiveRecord::Migration[5.1]
   def change
     create_table :dogs do |t|
-      t.string :pet_id
       t.string :shelter_id
       t.string :name
       t.string :age

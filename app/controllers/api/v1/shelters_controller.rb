@@ -6,10 +6,18 @@ class Api::V1::SheltersController < ApplicationController
   end
 
   def create
-    byebug
-    Shelter.create(shelter_params)
-    console.log("Done")
-
+    params["shelters"]["payload"]["shelter"].each do |place|
+      Shelter.find_or_create_by(shelter_id: place["id"]["$t"]) do |newShelter|
+        # newShelter.id = place["shelterId"]["$t"]
+        newShelter.name = place["name"]["$t"]
+        newShelter.city = place["city"]["$t"]
+        newShelter.state = place["state"]["$t"]
+        newShelter.zip_code = place["zip"]["$t"]
+        newShelter.latitude = place["latitude"]["$t"]
+        newShelter.longitude = place["longitude"]["$t"]
+        newShelter.email = place["email"]["$t"]
+      end
+    end
   end
 
   def show

@@ -24,7 +24,6 @@ ActiveRecord::Schema.define(version: 20171121155831) do
   end
 
   create_table "dogs", force: :cascade do |t|
-    t.string "pet_id"
     t.string "shelter_id"
     t.string "name"
     t.string "age"
@@ -38,13 +37,13 @@ ActiveRecord::Schema.define(version: 20171121155831) do
   end
 
   create_table "shelters", force: :cascade do |t|
-    t.integer "shelter_id"
-    t.integer "name"
+    t.string "shelter_id"
+    t.string "name"
     t.string "city"
     t.string "state"
-    t.integer "zip_code"
-    t.integer "latitude"
-    t.integer "longitude"
+    t.string "zip_code"
+    t.string "latitude"
+    t.string "longitude"
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

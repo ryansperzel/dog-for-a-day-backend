@@ -7,8 +7,17 @@ class Api::V1::DogsController < ApplicationController
 
   def create
     params["dogs"]["payload"]["pet"].each do |dog|
-      Dog.create(pet_id: dog["id"]["$t"], shelter_id: dog["shelterId"]["$t"], name: dog["name"]["$t"], age: dog["age"]["$t"], mix: dog["mix"]["$t"], sex: dog["sex"]["$t"], size: dog["size"]["$t"])
-      # description: dog["description"]["$t"], photo: ["media"]["photos"]["photo"][3]["$t"]
+      Dog.find_or_create_by(id: dog["id"]["$t"]) do |newDog|
+        newDog.id = dog["id"]["$t"]
+        newDog.shelter_id = dog["shelterId"]["$t"]
+        newDog.name = dog["name"]["$t"]
+        newDog.age = dog["age"]["$t"]
+        newDog.mix = dog["mix"]["$t"]
+        newDog.sex = dog["sex"]["$t"]
+        newDog.size = dog["size"]["$t"]
+        newDog.description = dog["description"]["$t"]
+        newDog.photo = dog["media"]["photos"]["photo"][3]["$t"]
+      end
     end
   end
 
