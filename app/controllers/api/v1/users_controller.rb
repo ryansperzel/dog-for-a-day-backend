@@ -6,10 +6,7 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def create
-    byebug
     User.create(user_params)
-    console.log("Done")
-
   end
 
   def show
@@ -21,9 +18,15 @@ class Api::V1::UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.update(user_params)
   end
-  
+
   def destroy
 
+  end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:username, :password, :first_name, :last_name)
   end
 
 end

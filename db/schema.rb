@@ -16,9 +16,9 @@ ActiveRecord::Schema.define(version: 20171121155831) do
   enable_extension "plpgsql"
 
   create_table "appointments", force: :cascade do |t|
-    t.integer "pet_id"
+    t.integer "dog_id"
     t.integer "user_id"
-    t.datetime "day"
+    t.date "day"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -6,10 +6,7 @@ class Api::V1::AppointmentsController < ApplicationController
   end
 
   def create
-    byebug
     Appointment.create(appointment_params)
-    console.log("Done")
-
   end
 
   def show
@@ -24,6 +21,13 @@ class Api::V1::AppointmentsController < ApplicationController
 
   def destroy
 
+  end
+
+
+  private
+
+  def appointment_params
+    params.require(:appointment).permit(:dog_id, :user_id, :day)
   end
 
 end
