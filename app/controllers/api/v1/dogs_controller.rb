@@ -8,8 +8,8 @@ class Api::V1::DogsController < ApplicationController
   def create
     params["dogs"]["payload"]["pet"].each do |dog|
       Dog.find_or_create_by(id: dog["id"]["$t"]) do |newDog|
-        if dog["id"]["$t"] && dog["shelterId"]["$t"] && dog["name"]["$t"] && dog["age"]["$t"] && dog["mix"]["$t"] && dog["sex"]["$t"] && dog["size"]["$t"]
-        && dog["description"]["$t"] && dog["media"]["photos"]["photo"][3]["$t"]
+        if dog["id"]["$t"] && dog["shelterId"]["$t"] && dog["name"]["$t"] && dog["age"]["$t"] && dog["mix"]["$t"] && dog["sex"]["$t"] &&
+           dog["size"]["$t"] && dog["description"]["$t"] && dog["media"]["photos"]
           newDog.id = dog["id"]["$t"]
           newDog.shelter_id = dog["shelterId"]["$t"]
           newDog.name = dog["name"]["$t"]
