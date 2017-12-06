@@ -19,6 +19,9 @@ ActiveRecord::Schema.define(version: 20171121155831) do
     t.integer "dog_id"
     t.integer "user_id"
     t.date "day"
+    t.string "name"
+    t.string "photo"
+    t.integer "cost"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

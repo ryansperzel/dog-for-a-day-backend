@@ -6,7 +6,8 @@ class Api::V1::AppointmentsController < ApplicationController
   end
 
   def create
-    Appointment.create(appointment_params)
+    @appointment = Appointment.create(appointment_params)
+    render json: @appointment
   end
 
   def show
@@ -20,14 +21,15 @@ class Api::V1::AppointmentsController < ApplicationController
   end
 
   def destroy
-
+    @appointment = Appointment.find(params[:id])
+    @appointment.destroy
   end
 
 
   private
 
   def appointment_params
-    params.require(:appointment).permit(:dog_id, :user_id, :day)
+    params.require(:appointment).permit(:dog_id, :user_id, :day, :name, :photo, :cost)
   end
 
 end
