@@ -1,25 +1,13 @@
-# README
+# Dog For A Day
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Dog For A Day allows users to search for shelter dogs anywhere in the United States, view details on each dog, and make a reservation with that dog on a particular day.
 
-Things you may want to cover:
+This repository contains the backend of the project; the frontend can be found [here](https://github.com/ryansperzel/dog-for-a-day-frontend)
 
-* Ruby version
+### Frontend
 
-* System dependencies
+The component-based **JavaScript** frontend was built with **React** and **Redux**. I used **Semantic UI React** along with custom **CSS** to style the frontend.
 
-* Configuration
+### Backend
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# final-project-backend
+The backend API was built with **Ruby on Rails**, and I used **PostgreSQL** for the database.
