@@ -1,6 +1,6 @@
 # Dog For A Day
 
-Dog For A Day allows users to search for shelter dogs anywhere in the United States, view details on each dog, and make a reservation with that dog on a particular day.
+Dog For A Day allows users to search for shelter dogs anywhere in the United States, view details on each dog, and make a reservation with that dog for a particular day.
 
 This repository contains the backend of the project; the frontend can be found [here](https://github.com/ryansperzel/dog-for-a-day-frontend)
 
